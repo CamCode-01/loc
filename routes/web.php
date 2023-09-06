@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/ho', function () {
     return view('welcome');
 });
-
+/*----------------------------------------Client----------------------------------------*/
 Route::get('/home',[App\Http\Controllers\ClientController::class,'home']);
 Route::get('/apropos',[App\Http\Controllers\ClientController::class,'apropos']);
 Route::get('/paiement',[App\Http\Controllers\ClientController::class,'paiement']);
@@ -24,3 +24,7 @@ Route::get('/cars',[App\Http\Controllers\ClientController::class,'cars']);
 Route::get('/contacts',[App\Http\Controllers\ClientController::class,'contacts']);
 Route::get('/services',[App\Http\Controllers\ClientController::class,'services']);
 Route::get('/details',[App\Http\Controllers\ClientController::class,'details']);
+
+/*----------------------------------------Admin----------------------------------------*/
+Route::get('/dashboard',[App\Http\Controllers\AdminController::class,'dashboard']);
+Route::get('/ajoutercategorie',[App\Http\Controllers\CategorieController::class,'ajoutercategorie']);
