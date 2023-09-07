@@ -28,3 +28,8 @@ Route::get('/details',[App\Http\Controllers\ClientController::class,'details']);
 /*----------------------------------------Admin----------------------------------------*/
 Route::get('/dashboard',[App\Http\Controllers\AdminController::class,'dashboard']);
 Route::get('/ajoutercategorie',[App\Http\Controllers\CategorieController::class,'ajoutercategorie']);
+Route::post('/sauvercategorie',[App\Http\Controllers\CategorieController::class,'sauvercategorie']);
+Route::get('/ajoutervoiture',[App\Http\Controllers\CarsController::class,'ajoutervoiture']);
+Route::post('/sauvercar',[App\Http\Controllers\CarsController::class,'sauvercar']);
+Route::get('/ajouterslider',[App\Http\Controllers\SliderController::class,'ajouterslider']);
+Route::post('/sauverslider',[App\Http\Controllers\SliderController::class,'sauverslider']);

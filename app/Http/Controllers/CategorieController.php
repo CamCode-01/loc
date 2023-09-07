@@ -10,4 +10,6 @@ class CategorieController extends Controller
         return view('admin.ajoutercategorie');
 
     }
+    public function sauvercategorie(Request $request){
+    }
 }
