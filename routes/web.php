@@ -27,6 +27,7 @@ Route::get('/details',[App\Http\Controllers\ClientController::class,'details']);
 
 /*----------------------------------------Admin----------------------------------------*/
 Route::get('/dashboard',[App\Http\Controllers\AdminController::class,'dashboard']);
+Route::get('/commandes',[App\Http\Controllers\AdminController::class,'commandes']);
 
 Route::get('/ajoutercategorie',[App\Http\Controllers\CategorieController::class,'ajoutercategorie']);
 Route::post('/sauvercategorie',[App\Http\Controllers\CategorieController::class,'sauvercategorie']);

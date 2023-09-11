@@ -1,6 +1,6 @@
 @extends('layouts.appadmin')
 @section('title')
-Sliders
+Commandes
 @endsection
 @section('contenu')
     <div class="main-panel">
@@ -10,7 +10,7 @@ Sliders
 
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Sliders</h4>
+                    <h4 class="card-title">Commandes</h4>
                     <div class="row">
                         <div class="col-12">
                             <div class="table-responsive">
@@ -18,10 +18,12 @@ Sliders
                                     <thead>
                                         <tr>
                                             <th>Ordre #</th>
-                                            <th>Image</th>
-                                            <th>Description 1</th>
-                                            <th>Description 2</th>
-                                            <th>Statut</th>
+                                            <th>Nom du client</th>
+                                            <th>Adresse</th>
+                                            <th>Panier</th>
+                                            <th>Date de retrait</th>
+                                            <th>Date de dépot</th>
+                                            <th>Paiement ID</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -32,11 +34,11 @@ Sliders
                                             <td>2012/08/03</td>
                                             <td>2012/08/03</td>
                                             <td>2012/08/03</td>
-                                            <label class="badge badge-info">On hold</label>
+                                            <td>2012/08/03</td>
+                                            <td>2012/08/03</td>
                                         </td>
                                             <td>
-                                                <button class="btn btn-outline-primary">Editer</button>
-                                                <button class="btn btn-outline-danger">Supprimer</button>
+                                                <button class="btn btn-outline-primary">View</button>
                                             </td>
                                         </tr>
                                     </tbody>
