@@ -20,7 +20,7 @@ Route::get('/ho', function () {
 Route::get('/home',[App\Http\Controllers\ClientController::class,'home']);
 Route::get('/apropos',[App\Http\Controllers\ClientController::class,'apropos']);
 Route::get('/paiement',[App\Http\Controllers\ClientController::class,'paiement']);
-Route::get('/cars',[App\Http\Controllers\ClientController::class,'cars']);
+Route::get('/clcars',[App\Http\Controllers\ClientController::class,'clcqrs']);
 Route::get('/contacts',[App\Http\Controllers\ClientController::class,'contacts']);
 Route::get('/services',[App\Http\Controllers\ClientController::class,'services']);
 Route::get('/details',[App\Http\Controllers\ClientController::class,'details']);
@@ -34,6 +34,7 @@ Route::get('/categories',[App\Http\Controllers\CategorieController::class,'categ
 
 Route::get('/ajoutervoiture',[App\Http\Controllers\CarsController::class,'ajoutervoiture']);
 Route::post('/sauvercar',[App\Http\Controllers\CarsController::class,'sauvercar']);
+Route::get('/cars',[App\Http\Controllers\CarsController::class,'cars']);
 
 Route::get('/ajouterslider',[App\Http\Controllers\SliderController::class,'ajouterslider']);
 Route::post('/sauverslider',[App\Http\Controllers\SliderController::class,'sauverslider']);
