@@ -13,8 +13,8 @@ class ClientController extends Controller
         return view('client.apropos');
     }
 
-    public function cars(){
-        return view('client.cars');
+    public function clcars(){
+        return view('client.clcars');
     }
 
     public function page(){

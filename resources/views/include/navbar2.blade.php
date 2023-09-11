@@ -29,7 +29,7 @@
             </a>
             <div class="collapse" id="tables">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="basic-table.html">Categories</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{URL::to('/categories')}}">Categories</a></li>
                     <li class="nav-item"> <a class="nav-link" href="data-table.html">Voitures</a></li>
                     <li class="nav-item"> <a class="nav-link" href="js-grid.html">Sliders</a></li>
                     <li class="nav-item"> <a class="nav-link" href="sortable-table.html">Reservations</a></li>

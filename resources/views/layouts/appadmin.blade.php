@@ -24,7 +24,7 @@
         <!-- partial:partials/_navbar.html -->
 
         {{-- Start navbar 1 --}}
-        @include('client.include.navbar1')
+        @include('include.navbar1')
         {{-- End navbar 1 --}}
 
         <!-- partial -->
@@ -32,14 +32,26 @@
             <!-- partial:partials/_sidebar.html -->
             {{-- Start navbar 2 --}}
 
-            @include('client.include.navbar2')
+            @include('include.navbar2')
 
             {{-- End navbar 2 --}}
             <!-- partial -->
 
 
             {{-- Start Content --}}
+            <div class="main-panel">
+                <div class="content-wrapper">
             @yield('contenu')
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a
+                            href="#" target="_blank">ulrich fedjo</a>. All rights reserved.</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Skyll Technologie<i
+                            class="ti-heart text-danger ml-1"></i></span>
+                </div>
+            </footer>
+                </div>
+            </div>
 
 
             {{-- End Content --}}
