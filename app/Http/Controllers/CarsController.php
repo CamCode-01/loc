@@ -13,7 +13,4 @@ class CarsController extends Controller
     public function sauvercar(){
 
     }
-    public function cars(){
-        return view('admin.cars');
-    }
 }
