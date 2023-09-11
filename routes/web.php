@@ -32,6 +32,8 @@ Route::get('/commandes',[App\Http\Controllers\AdminController::class,'commandes'
 Route::get('/ajoutercategorie',[App\Http\Controllers\CategorieController::class,'ajoutercategorie']);
 Route::post('/sauvercategorie',[App\Http\Controllers\CategorieController::class,'sauvercategorie']);
 Route::get('/categories',[App\Http\Controllers\CategorieController::class,'categories']);
+Route::get('/edit_categorie/{id}',[App\Http\Controllers\CategorieController::class,'edit_categorie']);
+Route::post('/modifiercategorie',[App\Http\Controllers\CategorieController::class,'modifiercategorie']);
 
 Route::get('/ajoutervoiture',[App\Http\Controllers\CarsController::class,'ajoutervoiture']);
 Route::post('/sauvercar',[App\Http\Controllers\CarsController::class,'sauvercar']);

@@ -45,5 +45,5 @@
     </div>
 @endsection
 @section('scripts')
-    <script src="backend/js/data-table.js"></script>
+    {{asset('<script src="backend/js/data-table.js"></script>')}}
 @endsection
