@@ -3,11 +3,6 @@
     Catégories
 @endsection
 @section('contenu')
-    <div class="main-panel">
-        <div class="content-wrapper">
-
-
-
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Catégorie</h4>
@@ -40,10 +35,6 @@
                     </div>
                 </div>
             </div>
-
-
-        </div>
-    </div>
 @endsection
 @section('scripts')
     <script src="backend/js/data-table.js"></script>
