@@ -18,9 +18,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($categories as $categorie)
                                         <tr>
                                             <td>1</td>
-                                            <td>2012/08/03</td>
+                                            <td>{{$categorie->nom_categorie}}</td>
                                             {{-- <label class="badge badge-info">On hold</label>
                                         </td> --}}
                                             <td>
@@ -28,6 +29,7 @@
                                                 <button class="btn btn-outline-danger">Supprimer</button>
                                             </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

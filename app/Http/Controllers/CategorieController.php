@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Categorie;
+
+
 class CategorieController extends Controller
 {
     public function ajoutercategorie(){
@@ -11,8 +14,15 @@ class CategorieController extends Controller
 
     }
     public function sauvercategorie(Request $request){
+        $this->validate($request,['nom_categorie'=>'required']);
+        $categorie = new Categorie();
+        $categorie->nom_categorie = $request->input('nom_categorie');
+        $categorie->save();
+        return redirect('/ajoutercategorie')->with('status','la catégorie '.$categorie->nom_categorie.'a été ajoutée avec succes');
     }
     public function categories(){
-        return view('admin.categories');
-    }
+        $categories=Categorie::get();
+        return view('admin.categories')->with('categories',$categories);
+
+   }
 }
