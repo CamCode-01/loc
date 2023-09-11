@@ -38,3 +38,4 @@ Route::get('/cars',[App\Http\Controllers\CarsController::class,'cars']);
 
 Route::get('/ajouterslider',[App\Http\Controllers\SliderController::class,'ajouterslider']);
 Route::post('/sauverslider',[App\Http\Controllers\SliderController::class,'sauverslider']);
+Route::get('/sliders',[App\Http\Controllers\SliderController::class,'sliders']);
