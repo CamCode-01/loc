@@ -52,6 +52,7 @@ class CarsController extends Controller
 
     }
     public function cars(){
-        return view('admin.cars');
+        $cars= Car::get();
+        return view('admin.cars')->with('cars',$cars);
     }
 }
