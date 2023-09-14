@@ -8,9 +8,9 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Ajouter une voiture</h4>
-                    @if (Session::has('status'))
+                    @if (Session::has('statut'))
                         <div class="alert alert-success">
-                        {{ Session::get('status') }}
+                        {{ Session::get('statut') }}
                     </div>
                     @endif
                     @if (count($errors) > 0)
@@ -43,16 +43,8 @@
                         {{ Form::select('categorie_car', $categories, null, ['placeholder' => 'sélectionner la catégorie']) }}
                     </div>
                     <div class="form-group">
-                        {{ Form::label('', 'image 1', ['for' => 'cname']) }}
+                        {{ Form::label('', 'image', ['for' => 'cname']) }}
                         {{ Form::file('car_image1', ['class' => 'form-control', 'id' => 'cname']) }}
-                    </div>
-                    <div class="form-group">
-                        {{ Form::label('', 'image 2', ['for' => 'cname']) }}
-                        {{ Form::file('car_image2', ['class' => 'form-control', 'id' => 'cname']) }}
-                    </div>
-                    <div class="form-group">
-                        {{ Form::label('', 'image 3', ['for' => 'cname']) }}
-                        {{ Form::file('car_image3', ['class' => 'form-control', 'id' => 'cname']) }}
                     </div>
                     <div class="form-group">
                         {{ Form::label('', 'Détails de la voiture', ['for' => 'cname']) }}
