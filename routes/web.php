@@ -39,6 +39,8 @@ Route::get('/supprimercategorie/{id}',[App\Http\Controllers\CategorieController:
 Route::get('/ajoutervoiture',[App\Http\Controllers\CarsController::class,'ajoutervoiture']);
 Route::post('/sauvercar',[App\Http\Controllers\CarsController::class,'sauvercar']);
 Route::get('/cars',[App\Http\Controllers\CarsController::class,'cars']);
+Route::get('/edit_car/{id}',[App\Http\Controllers\CarsController::class,'edit_car']);
+Route::post('/modifiercar',[App\Http\Controllers\CarsController::class,'modifiercar']);
 
 Route::get('/ajouterslider',[App\Http\Controllers\SliderController::class,'ajouterslider']);
 Route::post('/sauverslider',[App\Http\Controllers\SliderController::class,'sauverslider']);

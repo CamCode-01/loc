@@ -37,7 +37,7 @@ class CategorieController extends Controller
    }
 
 
-   public function modifiercategorie(Request$request){
+   public function modifiercategorie(Request $request){
     $this->validate($request,['nom_categorie'=>'required|unique:categories']);
     $categorie = Categorie::find($request->input('id'));
     $categorie->nom_categorie = $request->input('nom_categorie');
