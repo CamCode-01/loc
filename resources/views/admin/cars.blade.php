@@ -43,13 +43,24 @@ Voitures
                                     @endif
                                 </td>
                                 <td>
-                                    <button class="btn btn-outline-primary" onclick="window.location='{{url('/edit_car/'.$car->id)}}'">Editer</button>
-                                    <button class="btn btn-outline-danger">Supprimer</button>
-                                </td>
+                                    <button class="btn btn-outline-primary"
+                                        onclick="window.location='{{url('/edit_car/'.$car->id)}}'">Editer</button>
+                                    <a href="{{url('/supprimervoiture/'.$car->id)}}" id="delete"><button
+                                            class="btn btn-outline-danger">Supprimer</button></a>
+                                    @if ($car->statut==1)
+                                    <button class="btn btn-outline-warning"
+                                        onclick="window.location = '{{url('/desactiver_voiture/'.$car->id)}}'">Desactiver</button>
+
+                                    @else
+                                    <button class="btn btn-outline-success"
+                                        onclick="window.location = '{{url('/activer_voiture/'.$car->id)}}'">Activer</button>
+
+                                    @endif
                             </tr>
                             {{Form::hidden('',$increment=$increment+1)}}
 
                             @endforeach
+                            </td>
 
                         </tbody>
                     </table>

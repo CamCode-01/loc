@@ -6,37 +6,40 @@ use Illuminate\Http\Request;
 
 use App\Models\Car;
 use App\Models\Categorie;
+use Illuminate\Support\Facades\Storage;
+
 
 class CarsController extends Controller
 {
     public function ajoutervoiture()
     {
         $categories = Categorie::All()->pluck('nom_categorie',  'nom_categorie');
-        return view('admin.ajoutervoiture')->with('categories',$categories);
+        return view('admin.ajoutervoiture')->with('categories', $categories);
     }
-    public function sauvercar(Request $request){
-        $this->validate($request,['car_name'=>'required|unique:cars','car_price'=>'required','categorie_car'=>'required',
-        'car_image1'=>'image|nullable|max:1999', 'car_detail'
-            ]);
+    public function sauvercar(Request $request)
+    {
+        $this->validate($request, [
+            'car_name' => 'required|unique:cars', 'car_price' => 'required', 'categorie_car' => 'required',
+            'car_image1' => 'image|nullable|max:1999', 'car_detail'
+        ]);
 
 
 
 
 
-            if ($request->hasFile('car_image1')) {
-                $fileNameWithExt = $request->file('car_image1')->getClientOriginalName();
+        if ($request->hasFile('car_image1')) {
+            $fileNameWithExt = $request->file('car_image1')->getClientOriginalName();
 
-                $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
 
-                $extension = $request->file('car_image1')->getClientOriginalExtension();
+            $extension = $request->file('car_image1')->getClientOriginalExtension();
 
-                $fileNameToStore = $fileName.'_'.time().'.'.$extension;
+            $fileNameToStore = $fileName . '_' . time() . '.' . $extension;
 
-                $path = $request->file('car_image1')->storeAs('public/car_images',$fileNameToStore);
-            }
-            else{
-                $fileNameToStore = 'noimage.jpg';
-            }
+            $path = $request->file('car_image1')->storeAs('public/car_images', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
 
 
 
@@ -48,41 +51,43 @@ class CarsController extends Controller
         $car->car_detail = $request->input('car_detail');
         $car->statut = 1;
         $car->save();
-        return redirect('/ajoutervoiture')->with('statut', 'La voiture '.$car->car_name.' a été ajouté avec succès');
-
+        return redirect('/ajoutervoiture')->with('statut', 'La voiture ' . $car->car_name . ' a été ajouté avec succès');
     }
-    public function cars(){
-        $cars= Car::get();
-        return view('admin.cars')->with('cars',$cars);
+    public function cars()
+    {
+        $cars = Car::get();
+        return view('admin.cars')->with('cars', $cars);
     }
-    public function edit_car($id){
+    public function edit_car($id)
+    {
         $car = Car::find($id);
         $categories = Categorie::All()->pluck('nom_categorie',  'nom_categorie');
-        return view('admin.edit_car')->with('car',$car)->with('categories',$categories);
+        return view('admin.edit_car')->with('car', $car)->with('categories', $categories);
     }
-    public function modifiercar(Request $request){
-        $this->validate($request,['car_name'=>'required|unique:cars','car_price'=>'required','categorie_car'=>'required',
-        'car_image1'=>'image|nullable|max:1999', 'car_detail'
-            ]);
+    public function modifiercar(Request $request)
+    {
+        $this->validate($request, [
+            'car_name' => 'required|unique:cars', 'car_price' => 'required', 'categorie_car' => 'required',
+            'car_image1' => 'image|nullable|max:1999', 'car_detail'
+        ]);
 
 
 
 
 
-            if ($request->hasFile('car_image1')) {
-                $fileNameWithExt = $request->file('car_image1')->getClientOriginalName();
+        if ($request->hasFile('car_image1')) {
+            $fileNameWithExt = $request->file('car_image1')->getClientOriginalName();
 
-                $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
 
-                $extension = $request->file('car_image1')->getClientOriginalExtension();
+            $extension = $request->file('car_image1')->getClientOriginalExtension();
 
-                $fileNameToStore = $fileName.'_'.time().'.'.$extension;
+            $fileNameToStore = $fileName . '_' . time() . '.' . $extension;
 
-                $path = $request->file('car_image1')->storeAs('public/car_images',$fileNameToStore);
-            }
-            else{
-                $fileNameToStore = 'noimage.jpg';
-            }
+            $path = $request->file('car_image1')->storeAs('public/car_images', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
 
 
 
@@ -94,7 +99,32 @@ class CarsController extends Controller
         $car->car_detail = $request->input('car_detail');
         $car->statut = 1;
         $car->update();
-        return redirect('/cars')->with('statut', 'La voiture '.$car->car_name.' a été modifiée avec succès');
-
+        return redirect('/cars')->with('statut', 'La voiture ' . $car->car_name . ' a été modifiée avec succès');
     }
+    public function supprimervoiture($id)
+    {
+        $car = Car::find($id);
+        if ($car->image_produit != 'noimage.jpg') {
+            storage::delete('public/car_images/' . $car->car_images);
+
+            $car->delete();
+            return redirect('/cars')->with('statut', 'La voiture ' . $car->car_name . ' a été supprimée avec succès!');
+        }
+    }
+    public function activer_voiture($id)
+    {
+        $car = Car::find($id);
+        $car->statut = 1;
+        $car->update();
+
+        return redirect('/cars')->with('statut', 'La voiture ' . $car->car_name . ' a été activer avec succès!');
+    }
+    public function desactiver_voiture($id){
+    $car = Car::find($id);
+    $car->statut = 0;
+    $car->update();
+
+    return redirect('/cars')->with('statut', 'La voiture '.$car->car_name.' a été désactiver avec succès!');
+
+}
 }
