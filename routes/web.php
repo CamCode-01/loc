@@ -42,8 +42,8 @@ Route::get('/cars',[App\Http\Controllers\CarsController::class,'cars']);
 Route::get('/edit_car/{id}',[App\Http\Controllers\CarsController::class,'edit_car']);
 Route::post('/modifiercar',[App\Http\Controllers\CarsController::class,'modifiercar']);
 Route::get('/supprimervoiture/{id}',[App\Http\Controllers\CarsController::class,'supprimervoiture']);
-Route::get('/activer_voiture{id}',[App\Http\Controllers\CarsController::class,'activer_voiture']);
-Route::get('/deactiver_voiture{id}',[App\Http\Controllers\CarsController::class,'deactiver_voiture']);
+Route::get('/activer_voiture/{id}',[App\Http\Controllers\CarsController::class,'activer_voiture']);
+Route::get('/desactiver_voiture/{id}',[App\Http\Controllers\CarsController::class,'desactiver_voiture']);
 
 Route::get('/ajouterslider',[App\Http\Controllers\SliderController::class,'ajouterslider']);
 Route::post('/sauverslider',[App\Http\Controllers\SliderController::class,'sauverslider']);

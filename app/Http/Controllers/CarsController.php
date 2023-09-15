@@ -111,20 +111,21 @@ class CarsController extends Controller
             return redirect('/cars')->with('statut', 'La voiture ' . $car->car_name . ' a été supprimée avec succès!');
         }
     }
-    public function activer_voiture($id)
-    {
+    public function activer_voiture($id){
         $car = Car::find($id);
         $car->statut = 1;
         $car->update();
-
-        return redirect('/cars')->with('statut', 'La voiture ' . $car->car_name . ' a été activer avec succès!');
+    
+        return redirect('/cars')->with('statut', 'La voiture '.$car->car_name.' a été activée avec succès!');
+    
     }
+    
     public function desactiver_voiture($id){
-    $car = Car::find($id);
-    $car->statut = 0;
-    $car->update();
-
-    return redirect('/cars')->with('statut', 'La voiture '.$car->car_name.' a été désactiver avec succès!');
-
-}
+        $car = Car::find($id);
+        $car->statut = 0;
+        $car->update();
+    
+        return redirect('/cars')->with('statut', 'La voiture '.$car->car_name.' a été désactivée avec succès!');
+    
+    }
 }
