@@ -98,7 +98,7 @@ class CarsController extends Controller
     public function supprimervoiture($id)
     {
         $car = Car::find($id);
-        if ($car->image_produit != 'noimage.jpg') {
+        if ($car->car_image1 != 'noimage.jpg') {
             storage::delete('public/car_images/' . $car->car_images);
 
             $car->delete();
