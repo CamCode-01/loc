@@ -48,3 +48,5 @@ Route::get('/desactiver_voiture/{id}',[App\Http\Controllers\CarsController::clas
 Route::get('/ajouterslider',[App\Http\Controllers\SliderController::class,'ajouterslider']);
 Route::post('/sauverslider',[App\Http\Controllers\SliderController::class,'sauverslider']);
 Route::get('/sliders',[App\Http\Controllers\SliderController::class,'sliders']);
+Route::get('/edit_slider/{id}',[App\Http\Controllers\SliderController::class,'edit_slider']);
+Route::post('/modifierslider',[App\Http\Controllers\SliderController::class,'modifierslider']);

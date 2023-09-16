@@ -71,10 +71,6 @@ class CarsController extends Controller
             'car_image1' => 'image|nullable|max:1999', 'car_detail'
         ]);
 
-
-
-
-
         if ($request->hasFile('car_image1')) {
             $fileNameWithExt = $request->file('car_image1')->getClientOriginalName();
 
@@ -88,8 +84,6 @@ class CarsController extends Controller
         } else {
             $fileNameToStore = 'noimage.jpg';
         }
-
-
 
         $car = Car::find($request->input('id'));
         $car->car_name = $request->input('car_name');
