@@ -21,8 +21,7 @@ class ClientController extends Controller
 
     public function clcars(){
         $categories = Categorie::get();
-        $cars = Car::where('statut',1)->get();
-        
+        $cars = Car::where('statut',1)->get(); 
         return view('client.clcars')->with('categories',$categories)->with('cars',$cars);
     }
 
