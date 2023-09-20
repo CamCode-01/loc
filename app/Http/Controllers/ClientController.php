@@ -31,6 +31,12 @@ class ClientController extends Controller
          return view('client.clcars')->with('cars',$cars)->with('categories',$categories);
     }
 
+    public function voir_details($id){
+        $car = Car::find($id);
+
+        print($car);
+    }
+
     public function page(){
         return view('client.pages');
     }
@@ -43,10 +49,6 @@ class ClientController extends Controller
         return view('client.contacts');
     }
 
-    public function detail(){
-        return view('client.details');
-    }
-
     public function team(){
         return view('client.team');
     }
@@ -54,7 +56,8 @@ class ClientController extends Controller
     public function services(){
         return view('client.services');
     }
-    public function details(){
-        return view('client.details');
+    public function details($id){
+        $car = Car::find($id);
+        return view('client.details')->with('car',$car);
     }
 }

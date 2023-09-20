@@ -27,6 +27,7 @@
             @foreach ($cars as $car)
                 
             <div class="col-lg-4 col-md-6 mb-2">
+                <a href="{{URL::to('details')}}" class="text-black">
                 <div class="rent-item mb-4">
                     <img class="img-fluid mb-4" src="storage/car_images/{{$car->car_image1}}" alt="">
                     <h4 class="text-uppercase mb-4">{{$car->car_name}}</h4>
@@ -44,9 +45,10 @@
                             <span>25K</span>
                         </div>
                     </div>
-                    <a class="btn btn-primary px-3" href="{{URL::to('paiement')}}">{{$car->car_price}}fcfa/Day</a>
-                    <a class="btn btn-primary px-3" href="{{URL::to('details')}}">Voir details</a>
+                    <a class="btn btn-primary px-3" href="{{URL::to('details')}}">{{$car->car_price}}fcfa/Day</a>
+                    <a class="btn btn-primary px-3" href="details/{{$car->id}}">Voir details</a>
                 </div>
+            </a>
             </div>
             @endforeach
         </div>

@@ -23,8 +23,9 @@ Route::get('/paiement',[App\Http\Controllers\ClientController::class,'paiement']
 Route::get('/clcars',[App\Http\Controllers\ClientController::class,'clcars']);
 Route::get('/contacts',[App\Http\Controllers\ClientController::class,'contacts']);
 Route::get('/services',[App\Http\Controllers\ClientController::class,'services']);
-Route::get('/details',[App\Http\Controllers\ClientController::class,'details']);
+Route::get('/details/{id}',[App\Http\Controllers\ClientController::class,'details']);
 Route::get('/select_par_cat/{name}',[App\Http\Controllers\ClientController::class,'select_par_cat']);
+Route::get('/voir_details/{id}',[App\Http\Controllers\ClientController::class,'voir_details']);
 
 /*----------------------------------------Admin----------------------------------------*/
 Route::get('/dashboard',[App\Http\Controllers\AdminController::class,'dashboard']);
