@@ -81,7 +81,7 @@
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
                         <a href="{{ URL::to('home') }}" class="nav-item nav-link">Home</a>
-                        <a href="{{ URL::to('cars') }}" class="nav-item nav-link">Nos véhicules</a>
+                        <a href="{{ URL::to('clcars') }}" class="nav-item nav-link">Nos véhicules</a>
                         <a href="{{ URL::to('apropos') }}" class="nav-item nav-link">Apropos</a>
                         <a href="{{ URL::to('services') }}" class="nav-item nav-link">Services</a>
                         <a href="{{ URL::to('contacts') }}" class="nav-item nav-link">Contacts</a>

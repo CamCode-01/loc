@@ -4,17 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Car;
+use App\Models\Slider;
+use App\Models\Categorie;
+
 class ClientController extends Controller
 {
     public function home(){
-        return view('client.home');
+        $sliders = Slider::where('statut',1)->get();
+        $cars = Car::where('statut',1)->get();
+        return view('client.home')->with('sliders',$sliders)->with('cars',$cars);
     }
     public function apropos(){
         return view('client.apropos');
     }
 
     public function clcars(){
-        return view('client.clcars');
+        $categories = Categorie::get();
+        $cars = Car::where('statut',1)->get();
+        
+        return view('client.clcars')->with('categories',$categories)->with('cars',$cars);
     }
 
     public function page(){
