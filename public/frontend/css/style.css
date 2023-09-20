@@ -1,7 +1,19 @@
 /********** Template CSS **********/
 
+
+
+.select{
+    border: 3px solid rgb(207, 200, 186);
+    padding: 8px;
+    border-radius: 30px;
+}
+
+
+
+
+
 :root {
-    --primary: #F77D0A;
+    --primary: #d66305;
     --secondary: #2B2E4A;
     --light: #F4F5F8;
     --dark: #1C1E32;

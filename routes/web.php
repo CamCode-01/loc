@@ -24,6 +24,7 @@ Route::get('/clcars',[App\Http\Controllers\ClientController::class,'clcars']);
 Route::get('/contacts',[App\Http\Controllers\ClientController::class,'contacts']);
 Route::get('/services',[App\Http\Controllers\ClientController::class,'services']);
 Route::get('/details',[App\Http\Controllers\ClientController::class,'details']);
+Route::get('/select_par_cat/{name}',[App\Http\Controllers\ClientController::class,'select_par_cat']);
 
 /*----------------------------------------Admin----------------------------------------*/
 Route::get('/dashboard',[App\Http\Controllers\AdminController::class,'dashboard']);

@@ -7,12 +7,12 @@
 <div class="container-fluid page-header">
     <h1 class="display-3 text-uppercase text-white mb-3">Car Listing</h1>
     <div class="d-inline-flex text-white">
-        <h6 class="text-uppercase m-0"><a class="text-white" href="{{URL::to('/clcars')}}">Voir tout</a></h6>
+        <h6 class="text-uppercase m-0"><a class="text-white {{(request()->is('clcars') ? 'select' : '')}}" href="{{URL::to('/clcars')}}">Voir tout</a></h6>
         <h6 class="text-body m-0 px-3">/</h6>
         @foreach ($categories as $categorie)
-        <a href="#">
-            <h6 class="text-uppercase text-body mr-3">{{$categorie->nom_categorie}}</h6>
-        </a>
+        
+            <h6 class="text-uppercase text-body mr-3"><a href="select_par_cat/{{$categorie->nom_categorie}}" class="text-white {{(request()->is('select_par_cat/'.$categorie->nom_categorie) ? 'select' : '')}}">{{$categorie->nom_categorie}}</a></h6>
+        
         @endforeach
     </div>
 </div>
