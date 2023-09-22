@@ -27,7 +27,7 @@ class ClientController extends Controller
 
     public function select_par_cat($name){
         $categories = Categorie::get();
-         $cars = Car::where('categorie_car',$name)->where('statut',1)->get();
+    $cars = Car::where('categorie_car',$name)->where('statut',1)->get();
          return view('client.clcars')->with('cars',$cars)->with('categories',$categories);
     }
 

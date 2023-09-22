@@ -25,6 +25,15 @@
                         <div class="col-md-3 col-6 px-2 pb-2">
                             <img class="img-fluid w-100" src="storage/car_images/{{$car->car_image1}}" alt="">
                         </div>
+                        <div class="col-md-3 col-6 px-2 pb-2">
+                            <img class="img-fluid w-100" src="frontend/img/gallery-2.jpg" alt="">
+                        </div>
+                        <div class="col-md-3 col-6 px-2 pb-2">
+                            <img class="img-fluid w-100" src="frontend/img/gallery-3.jpg" alt="">
+                        </div>
+                        <div class="col-md-3 col-6 px-2 pb-2">
+                            <img class="img-fluid w-100" src="frontend/img/gallery-4.jpg" alt="">
+                        </div>
                     </div>
                     <p>{{$car->car_detail}}</p>
                     <div class="row pt-2">
