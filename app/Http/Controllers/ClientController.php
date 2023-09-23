@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Car;
 use App\Models\Slider;
 use App\Models\Categorie;
+use App\Models\Client;
 
 class ClientController extends Controller
 {
@@ -59,5 +60,22 @@ class ClientController extends Controller
     public function details($id){
         $car = Car::find($id);
         return view('client.details')->with('car',$car);
+    }
+    public function creer_compte(Request $request){
+        $this->validate($request,['name'=>'required','email'=>'email|required','password'=>'required|min:6']);
+
+        $client = new Client();
+        $client->name = $request->input('name');
+        $client->email = $request->input('email');
+        $client->password = bcrypt($request->input('password')); 
+        $client->save();
+        return back()->with('statut','Votre compte a été creer avec succès');
+}
+
+    public function login(){
+        return view('client.login');
+    }
+    public function signup(){
+        return view('client.signup');
     }
 }

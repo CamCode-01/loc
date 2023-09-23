@@ -27,6 +27,12 @@ Route::get('/details/{id}',[App\Http\Controllers\ClientController::class,'detail
 Route::get('/select_par_cat/{name}',[App\Http\Controllers\ClientController::class,'select_par_cat']);
 Route::get('/voir_details/{id}',[App\Http\Controllers\ClientController::class,'voir_details']);
 
+
+/*----------------------------------------login----------------------------------------*/
+Route::get('/logi',[App\Http\Controllers\ClientController::class,'login']);
+Route::get('/signup',[App\Http\Controllers\ClientController::class,'signup']);
+Route::post('/creer_compte',[App\Http\Controllers\ClientController::class,'creer_compte']);
+
 /*----------------------------------------Admin----------------------------------------*/
 Route::get('/dashboard',[App\Http\Controllers\AdminController::class,'dashboard']);
 Route::get('/commandes',[App\Http\Controllers\AdminController::class,'commandes']);
