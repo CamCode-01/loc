@@ -2,10 +2,24 @@
 
 
 
-.select{
+.select {
     border: 3px solid rgb(207, 200, 186);
     padding: 8px;
     border-radius: 30px;
+}
+
+.conn1 {
+    border-right: 3px solid rgb(200, 184, 152);
+
+}
+
+.conn {
+    border: 3px solid rgb(207, 200, 186);
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    color: rgb(240, 181, 41);
+
 }
 
 
@@ -89,7 +103,7 @@ h6,
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    padding: 30px 15px;
+    /* padding: 30px 15px; */
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -104,7 +118,7 @@ h6,
 }
 
 @media (max-width: 991.98px) {
-    .navbar-dark .navbar-nav .nav-link  {
+    .navbar-dark .navbar-nav .nav-link {
         padding: 10px 15px;
     }
 }

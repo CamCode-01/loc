@@ -8,6 +8,10 @@ use App\Models\Car;
 use App\Models\Slider;
 use App\Models\Categorie;
 use App\Models\Client;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+
+
 
 class ClientController extends Controller
 {
@@ -43,6 +47,9 @@ class ClientController extends Controller
     }
 
     public function paiement(){
+        if(!Session::has('client')){
+            return view('client.login');
+        }
         return view('client.paiement');
     }
 
@@ -62,7 +69,7 @@ class ClientController extends Controller
         return view('client.details')->with('car',$car);
     }
     public function creer_compte(Request $request){
-        $this->validate($request,['name'=>'required','email'=>'email|required','password'=>'required|min:6']);
+        $this->validate($request,['name'=>'required','email'=>'email|required|unique:clients','password'=>'required|min:6']);
 
         $client = new Client();
         $client->name = $request->input('name');
@@ -71,6 +78,32 @@ class ClientController extends Controller
         $client->save();
         return back()->with('statut','Votre compte a été creer avec succès');
 }
+
+public function acceder_compte(Request $request){
+    $this->validate($request,['email'=>'email|required','password'=>'required']);
+    $client = Client::where('email',$request->input('email'))->first();
+    if($client){
+        if (Hash::check($request->input('password'),$client->password)) {
+             Session::put('client',$client);
+
+            return redirect('/clcars');
+        }
+        else{
+            return back()->with('statut','mot de pass ou email incorrect');
+
+        }
+
+    }
+    else{
+        return back()->with('statut','vous n'."'".'avez pas de compte');
+    }
+
+}
+public function logout(){
+    Session::forget('client');
+    return back();
+}
+
 
     public function login(){
         return view('client.login');

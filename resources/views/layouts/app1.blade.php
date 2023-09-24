@@ -84,7 +84,14 @@
                         <a href="{{ URL::to('clcars') }}" class="nav-item nav-link">Nos véhicules</a>
                         <a href="{{ URL::to('apropos') }}" class="nav-item nav-link">Apropos</a>
                         <a href="{{ URL::to('services') }}" class="nav-item nav-link">Services</a>
-                        <a href="{{ URL::to('contacts') }}" class="nav-item nav-link">Contacts</a>
+                        <a href="{{ URL::to('contacts') }}" class="nav-item nav-link conn1">Contacts</a>
+                        {{-- <a href="{{ URL::to('logi') }}" class="nav-item nav-link conn">connecté</a> --}}
+                        @if (Session::has('client'))
+                            <a href="{{URL::to('/logout')}}" class="conn">Se deconnecté</a>
+                        @else
+                            <a href="{{URL::to('/logi')}}"class="conn">Connecté</a>
+
+                        @endif
                     </div>
                 </div>
             </nav>

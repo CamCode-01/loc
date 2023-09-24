@@ -32,6 +32,8 @@ Route::get('/voir_details/{id}',[App\Http\Controllers\ClientController::class,'v
 Route::get('/logi',[App\Http\Controllers\ClientController::class,'login']);
 Route::get('/signup',[App\Http\Controllers\ClientController::class,'signup']);
 Route::post('/creer_compte',[App\Http\Controllers\ClientController::class,'creer_compte']);
+Route::post('/acceder_compte',[App\Http\Controllers\ClientController::class,'acceder_compte']);
+Route::get('/logout',[App\Http\Controllers\ClientController::class,'logout']);
 
 /*----------------------------------------Admin----------------------------------------*/
 Route::get('/dashboard',[App\Http\Controllers\AdminController::class,'dashboard']);
