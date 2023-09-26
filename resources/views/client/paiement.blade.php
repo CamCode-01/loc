@@ -5,11 +5,11 @@
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header">
-        <h1 class="display-3 text-uppercase text-white mb-3">Car Booking</h1>
+        <h1 class="display-3 text-uppercase text-white mb-3">Reserver maintenant</h1>
         <div class="d-inline-flex text-white">
             <h6 class="text-uppercase m-0"><a class="text-white" href="">Home</a></h6>
             <h6 class="text-body m-0 px-3">/</h6>
-            <h6 class="text-uppercase text-body m-0">Car Booking</h6>
+            <h6 class="text-uppercase text-body m-0">Reservation</h6>
         </div>
     </div>
     <!-- Page Header Start -->
@@ -18,13 +18,13 @@
     <!-- Detail Start -->
     <div class="container-fluid pt-5">
         <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase mb-5">Mercedes Benz R3</h1>
+            <h1 class="display-4 text-uppercase mb-5">{{$car->car_name}}</h1>
             <div class="row align-items-center pb-2">
                 <div class="col-lg-6 mb-4">
-                    <img class="img-fluid" src="frontend/img/bg-banner.jpg" alt="">
+                   <a href=""> <img class="img-fluid" src="storage/car_images/{{$car->car_image1}}" alt=""></a>
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <h4 class="mb-2">$99.00/Day</h4>
+                    <h4 class="mb-2">{{$car->car_price}}fcfa/Day</h4>
                     <div class="d-flex mb-3">
                         <h6 class="mr-2">Rating:</h6>
                         <div class="d-flex align-items-center justify-content-center mb-1">
@@ -36,7 +36,7 @@
                             <small>(250)</small>
                         </div>
                     </div>
-                    <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt</p>
+                    <p>{{$car->car_detail}}</p>
                     <div class="d-flex pt-1">
                         <h6>Share on:</h6>
                         <div class="d-inline-flex">

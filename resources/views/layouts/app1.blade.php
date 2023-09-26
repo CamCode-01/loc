@@ -89,7 +89,7 @@
                         @if (Session::has('client'))
                             <a href="{{URL::to('/logout')}}" class="conn">Se deconnecté</a>
                         @else
-                            <a href="{{URL::to('/logi')}}"class="conn">Connecté</a>
+                            <a href="{{URL::to('/logi')}}"class="conn">Se connecté</a>
 
                         @endif
                     </div>

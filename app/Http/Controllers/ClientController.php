@@ -46,11 +46,12 @@ class ClientController extends Controller
         return view('client.pages');
     }
 
-    public function paiement(){
+    public function paiement($id){
         if(!Session::has('client')){
             return view('client.login');
         }
-        return view('client.paiement');
+        $car = Car::find($id);
+        return view('client.paiement')->with('car',$car);
     }
 
     public function contacts(){

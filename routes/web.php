@@ -19,7 +19,7 @@ Route::get('/ho', function () {
 /*----------------------------------------Client----------------------------------------*/
 Route::get('/home',[App\Http\Controllers\ClientController::class,'home']);
 Route::get('/apropos',[App\Http\Controllers\ClientController::class,'apropos']);
-Route::get('/paiement',[App\Http\Controllers\ClientController::class,'paiement']);
+Route::get('/paiement/{id}',[App\Http\Controllers\ClientController::class,'paiement']);
 Route::get('/clcars',[App\Http\Controllers\ClientController::class,'clcars']);
 Route::get('/contacts',[App\Http\Controllers\ClientController::class,'contacts']);
 Route::get('/services',[App\Http\Controllers\ClientController::class,'services']);
