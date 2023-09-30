@@ -22,6 +22,10 @@ Voitures
                                 <th>Image</th>
                                 <th>Nom de la voiture</th>
                                 <th>Categorie de la voiture</th>
+                                <th>Model</th>
+                                <th>Boîte de vitesse</th>
+                                <th>kilométrage</th>
+                                <th>Détails supplémentaires</th>
                                 <th>Prix</th>
                                 <th>Statut</th>
                                 <th>Actions</th>
@@ -34,6 +38,9 @@ Voitures
                                 <td><img src="storage/car_images/{{$car->car_image1}}" alt=""></td>
                                 <td>{{$car->car_name}}</td>
                                 <td>{{$car->categorie_car}}</td>
+                                <td>{{$car->afabrication}}</td>
+                                <td>{{$car->bvitesse}}</td>
+                                <td>{{$car->kmetrage}}</td>
                                 <td>{{$car->car_price}}</td>
                                 <td>
                                     @if($car->statut == 1)
@@ -58,10 +65,8 @@ Voitures
                                     @endif
                             </tr>
                             {{Form::hidden('',$increment=$increment+1)}}
-
                             @endforeach
                             </td>
-
                         </tbody>
                     </table>
                 </div>

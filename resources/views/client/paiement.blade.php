@@ -16,7 +16,7 @@
 
 
     <!-- Detail Start -->
-    <div class="container-fluid pt-5">
+    <div class="container-fluid">
         <div class="container pt-5 pb-3">
             <h1 class="display-4 text-uppercase mb-5">{{$car->car_name}}</h1>
             <div class="row align-items-center pb-2">
@@ -25,77 +25,21 @@
                 </div>
                 <div class="col-lg-6 mb-4">
                     <h4 class="mb-2">{{$car->car_price}}fcfa/Day</h4>
-                    <div class="d-flex mb-3">
-                        <h6 class="mr-2">Rating:</h6>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(250)</small>
-                        </div>
-                    </div>
                     <p>{{$car->car_detail}}</p>
-                    <div class="d-flex pt-1">
-                        <h6>Share on:</h6>
-                        <div class="d-inline-flex">
-                            <a class="px-2" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="px-2" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="px-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a class="px-2" href=""><i class="fab fa-pinterest"></i></a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="row mt-n3 mt-lg-0 pb-4">
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-car text-primary mr-2"></i>
-                    <span>Model: 2015</span>
+                    <span>Model: {{$car->afabrication}}</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-cogs text-primary mr-2"></i>
-                    <span>Automatic</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-road text-primary mr-2"></i>
-                    <span>20km/liter</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-eye text-primary mr-2"></i>
-                    <span>GPS Navigation</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
+                <div class="col-md-4 col-6 mb-2">
                     <i class="fa fa-car text-primary mr-2"></i>
-                    <span>Model: 2015</span>
+                    <span>Boîte de vitesse: {{$car->bvitesse}}</span>
                 </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-cogs text-primary mr-2"></i>
-                    <span>Automatic</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-road text-primary mr-2"></i>
-                    <span>20km/liter</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-eye text-primary mr-2"></i>
-                    <span>GPS Navigation</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
+                <div class="col-md-4 col-6 mb-2">
                     <i class="fa fa-car text-primary mr-2"></i>
-                    <span>Model: 2015</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-cogs text-primary mr-2"></i>
-                    <span>Automatic</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-road text-primary mr-2"></i>
-                    <span>20km/liter</span>
-                </div>
-                <div class="col-md-3 col-6 mb-2">
-                    <i class="fa fa-eye text-primary mr-2"></i>
-                    <span>GPS Navigation</span>
+                    <span>Kilometrage: {{$car->kmetrage}}km</span>
                 </div>
             </div>
         </div>
@@ -108,7 +52,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <h2 class="mb-4">Personal Detail</h2>
+                    <h2 class="mb-4"> Details personnel</h2>
                     <div class="mb-5">
                         <div class="row">
                             <div class="col-6 form-group">
@@ -127,12 +71,12 @@
                             </div>
                         </div>
                     </div>
-                    <h2 class="mb-4">Booking Detail</h2>
+                    <h2 class="mb-4">Details  de la reservation</h2>
                     <div class="mb-5">
                         <div class="row">
                             <div class="col-6 form-group">
                                 <select class="custom-select px-4" style="height: 50px;">
-                                    <option selected>Pickup Location</option>
+                                    <option selected>Lieu de retrait</option>
                                     <option value="1">Location 1</option>
                                     <option value="2">Location 2</option>
                                     <option value="3">Location 3</option>
@@ -140,7 +84,7 @@
                             </div>
                             <div class="col-6 form-group">
                                 <select class="custom-select px-4" style="height: 50px;">
-                                    <option selected>Drop Location</option>
+                                    <option selected>Lieu de depôt</option>
                                     <option value="1">Location 1</option>
                                     <option value="2">Location 2</option>
                                     <option value="3">Location 3</option>
@@ -150,43 +94,37 @@
                         <div class="row">
                             <div class="col-6 form-group">
                                 <div class="date" id="date2" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Date"
+                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Date de retrait"
+                                        data-target="#date2" data-toggle="datetimepicker" />
+                                </div>
+                            </div>
+                            <div class="col-6 form-group">
+                                <div class="date" id="date2" data-target-input="nearest">
+                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Date de depôt"
                                         data-target="#date2" data-toggle="datetimepicker" />
                                 </div>
                             </div>
                             <div class="col-6 form-group">
                                 <div class="time" id="time2" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Time"
+                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Heure de retrait"
+                                        data-target="#time2" data-toggle="datetimepicker" />
+                                </div>
+                            </div>
+                            <div class="col-6 form-group">
+                                <div class="time" id="time2" data-target-input="nearest">
+                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Heure de depôt"
                                         data-target="#time2" data-toggle="datetimepicker" />
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <select class="custom-select px-4" style="height: 50px;">
-                                    <option selected>Select Adult</option>
-                                    <option value="1">Adult 1</option>
-                                    <option value="2">Adult 2</option>
-                                    <option value="3">Adult 3</option>
-                                </select>
-                            </div>
-                            <div class="col-6 form-group">
-                                <select class="custom-select px-4" style="height: 50px;">
-                                    <option selected>Select Child</option>
-                                    <option value="1">Child 1</option>
-                                    <option value="2">Child 2</option>
-                                    <option value="3">Child 3</option>
-                                </select>
-                            </div>
-                        </div>
                         <div class="form-group">
-                            <textarea class="form-control py-3 px-4" rows="3" placeholder="Special Request" required="required"></textarea>
+                            <textarea class="form-control py-3 px-4" rows="3" placeholder="Requête special"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="bg-secondary p-5 mb-5">
-                        <h2 class="text-primary mb-4">Payment</h2>
+                        <h2 class="text-primary mb-4">paiement</h2>
                         <div class="form-group">
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" name="payment" id="paypal">

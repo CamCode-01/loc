@@ -5,7 +5,7 @@
 
 <!-- Page Header Start -->
 <div class="container-fluid page-header">
-    <h1 class="display-3 text-uppercase text-white mb-3">Car Listing</h1>
+    <h1 class="display-3 text-uppercase text-white mb-3">Liste des voitures</h1>
     <div class="d-inline-flex text-white">
         <h6 class="text-uppercase m-0"><a class="text-white {{(request()->is('clcars') ? 'select' : '')}}" href="{{URL::to('/clcars')}}">Voir tout</a></h6>
         <h6 class="text-body m-0 px-3">/</h6>
@@ -22,7 +22,7 @@
 <!-- Rent A Car Start -->
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
-        <h1 class="display-4 text-uppercase text-center mb-5">Find Your Car</h1>
+        <h1 class="display-4 text-uppercase text-center mb-5">Consultez nos vehicules</h1>
         <div class="row">
             @foreach ($cars as $car)
                 

@@ -79,8 +79,8 @@
                             <span>25K</span>
                         </div>
                     </div>
-                    <a class="btn btn-primary px-3" href="{{ URL::to('paiement') }}">{{$car->car_price}}fcfa/Day</a>
-                    <a class="btn btn-primary px-3" href="{{ URL::to('details') }}">Voir details</a>
+                    <a class="btn btn-primary px-3" href="paiement/{{$car->id}}">{{$car->car_price}}fcfa/Day</a>
+                    <a class="btn btn-primary px-3" href="details/{{$car->id}}">Voir details</a>
                 </div>
             </div>
             @endforeach

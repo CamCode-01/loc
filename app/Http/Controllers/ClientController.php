@@ -70,7 +70,7 @@ class ClientController extends Controller
         return view('client.details')->with('car',$car);
     }
     public function creer_compte(Request $request){
-        $this->validate($request,['name'=>'required','email'=>'email|required|unique:clients','password'=>'required|min:6']);
+        $this->validate($request,['name'=>'required','email'=>'email|required|unique:clientS','password'=>'required|min:6']);
 
         $client = new Client();
         $client->name = $request->input('name');

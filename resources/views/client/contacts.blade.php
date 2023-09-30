@@ -18,7 +18,7 @@
     <!-- Contact Start -->
     <div class="container-fluid py-5">
         <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase text-center mb-5">Contact Us</h1>
+            <h1 class="display-4 text-uppercase text-center mb-5">Nous contacter</h1>
             <div class="row">
                 <div class="col-lg-7 mb-2">
                     <div class="contact-form bg-light mb-4" style="padding: 30px;">

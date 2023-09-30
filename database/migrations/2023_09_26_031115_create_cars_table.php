@@ -16,7 +16,11 @@ return new class extends Migration
             $table->string('car_name')->unique();
             $table->integer('car_price');
             $table->string('categorie_car');
+            $table->integer('afabrication');
+            $table->string('bvitesse');
+            $table->integer('kmetrage');
             $table->string('car_image1');
+            $table->string('car_image2');
             $table->string('car_detail');
             $table->integer('statut');
             $table->timestamps();

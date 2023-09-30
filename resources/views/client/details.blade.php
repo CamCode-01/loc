@@ -26,109 +26,31 @@
                             <img class="img-fluid w-100" src="storage/car_images/{{$car->car_image1}}" alt="">
                         </div>
                         <div class="col-md-3 col-6 px-2 pb-2">
-                            <img class="img-fluid w-100" src="frontend/img/gallery-2.jpg" alt="">
-                        </div>
-                        <div class="col-md-3 col-6 px-2 pb-2">
-                            <img class="img-fluid w-100" src="frontend/img/gallery-3.jpg" alt="">
-                        </div>
-                        <div class="col-md-3 col-6 px-2 pb-2">
-                            <img class="img-fluid w-100" src="frontend/img/gallery-4.jpg" alt="">
+                            <img class="img-fluid w-100" src="storage/car_images/{{$car->car_image2}}" alt="">
                         </div>
                     </div>
-                    <p>{{$car->car_detail}}</p>
                     <div class="row pt-2">
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-car text-primary mr-2"></i>
-                            <span>Model: 2015</span>
+                            <span>Model: {{$car->afabrication}}</span>
                         </div>
-                        <div class="col-md-3 col-6 mb-2">
-                            <i class="fa fa-cogs text-primary mr-2"></i>
-                            <span>Automatic</span>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2">
-                            <i class="fa fa-road text-primary mr-2"></i>
-                            <span>20km/liter</span>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2">
-                            <i class="fa fa-eye text-primary mr-2"></i>
-                            <span>GPS Navigation</span>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2">
+                        <div class="col-md-4 col-6 mb-2">
                             <i class="fa fa-car text-primary mr-2"></i>
-                            <span>Model: 2015</span>
+                            <span>Boîte de vitesse: {{$car->bvitesse}}</span>
                         </div>
-                        <div class="col-md-3 col-6 mb-2">
-                            <i class="fa fa-cogs text-primary mr-2"></i>
-                            <span>Automatic</span>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2">
-                            <i class="fa fa-road text-primary mr-2"></i>
-                            <span>20km/liter</span>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2">
-                            <i class="fa fa-eye text-primary mr-2"></i>
-                            <span>GPS Navigation</span>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2">
+                        <div class="col-md-4 col-6 mb-2">
                             <i class="fa fa-car text-primary mr-2"></i>
-                            <span>Model: 2015</span>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2">
-                            <i class="fa fa-cogs text-primary mr-2"></i>
-                            <span>Automatic</span>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2">
-                            <i class="fa fa-road text-primary mr-2"></i>
-                            <span>20km/liter</span>
-                        </div>
-                        <div class="col-md-3 col-6 mb-2">
-                            <i class="fa fa-eye text-primary mr-2"></i>
-                            <span>GPS Navigation</span>
+                            <span>Kilometrage: {{$car->kmetrage}}km</span>
                         </div>
                     </div>
+                    <p>{{$car->car_detail}}</p>
+
                </div>
 
                 <div class="col-lg-4 mb-5">
                     <div class="bg-secondary p-5">
-                        <h3 class="text-primary text-center mb-4">Check Availability</h3>
-                        <div class="form-group">
-                            <select class="custom-select px-4" style="height: 50px;">
-                                <option selected>Pickup Location</option>
-                                <option value="1">Location 1</option>
-                                <option value="2">Location 2</option>
-                                <option value="3">Location 3</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <select class="custom-select px-4" style="height: 50px;">
-                                <option selected>Drop Location</option>
-                                <option value="1">Location 1</option>
-                                <option value="2">Location 2</option>
-                                <option value="3">Location 3</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <div class="date" id="date1" data-target-input="nearest">
-                                <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Date"
-                                    data-target="#date1" data-toggle="datetimepicker" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="time" id="time1" data-target-input="nearest">
-                                <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Time"
-                                    data-target="#time1" data-toggle="datetimepicker" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <select class="custom-select px-4" style="height: 50px;">
-                                <option selected>Select Person</option>
-                                <option value="1">Person 1</option>
-                                <option value="2">Person 2</option>
-                                <option value="3">Person 3</option>
-                            </select>
-                        </div>
                         <div class="form-group mb-0">
-                            <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Payer maintenant</button>
+                            <button class="btn btn-primary btn-block" type="button" style="height: 50px;"><a href="paiement/{{$car->id}}">Reservez ici</a></button>
                         </div>
                     </div>
                 </div>

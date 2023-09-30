@@ -20,7 +20,8 @@ class CarsController extends Controller
     {
         $this->validate($request, [
             'car_name' => 'required|unique:cars', 'car_price' => 'required', 'categorie_car' => 'required',
-            'car_image1' => 'image|nullable|max:1999', 'car_detail'
+            'afabrication','bvitesse'=>'required','kmetrage'=>'required',
+            'car_image1' => 'image|nullable|max:1999','car_image2' => 'image|nullable|max:1999', 'car_detail'
         ]);
 
 
@@ -41,13 +42,31 @@ class CarsController extends Controller
             $fileNameToStore = 'noimage.jpg';
         }
 
+        if ($request->hasFile('car_image2')) {
+            $fileNameWithExt = $request->file('car_image2')->getClientOriginalName();
+
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+            $extension = $request->file('car_image2')->getClientOriginalExtension();
+
+            $fileNameToStore = $fileName . '_' . time() . '.' . $extension;
+
+            $path = $request->file('car_image2')->storeAs('public/car_images', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
+
 
 
         $car = new Car();
         $car->car_name = $request->input('car_name');
         $car->car_price = $request->input('car_price');
         $car->categorie_car = $request->input('categorie_car');
+        $car->afabrication = $request->input('afabrication');
+        $car->bvitesse = $request->input('bvitesse');
+        $car->kmetrage = $request->input('kmetrage');
         $car->car_image1 = $fileNameToStore;
+        $car->car_image2 = $fileNameToStore;
         $car->car_detail = $request->input('car_detail');
         $car->statut = 1;
         $car->save();
@@ -68,7 +87,8 @@ class CarsController extends Controller
     {
         $this->validate($request, [
             'car_name' => 'required|unique:cars', 'car_price' => 'required', 'categorie_car' => 'required',
-            'car_image1' => 'image|nullable|max:1999', 'car_detail'
+            'afabrication','bvitesse'=>'required','kmetrage'=>'required',
+            'car_image1' => 'image|nullable|max:1999','car_image2' => 'image|nullable|max:1999', 'car_detail'
         ]);
 
         if ($request->hasFile('car_image1')) {
@@ -85,11 +105,30 @@ class CarsController extends Controller
             $fileNameToStore = 'noimage.jpg';
         }
 
+        if ($request->hasFile('car_image2')) {
+            $fileNameWithExt = $request->file('car_image2')->getClientOriginalName();
+
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+            $extension = $request->file('car_image2')->getClientOriginalExtension();
+
+            $fileNameToStore = $fileName . '_' . time() . '.' . $extension;
+
+            $path = $request->file('car_image2')->storeAs('public/car_images', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+
         $car = Car::find($request->input('id'));
         $car->car_name = $request->input('car_name');
         $car->car_price = $request->input('car_price');
         $car->categorie_car = $request->input('categorie_car');
+        $car->afabrication = $request->input('afabrication');
+        $car->bvitesse = $request->input('bvitesse');
+        $car->kmetrage = $request->input('kmetrage');
         $car->car_image1 = $fileNameToStore;
+        $car->car_image2 = $fileNameToStore;
         $car->car_detail = $request->input('car_detail');
         $car->statut = 1;
         $car->update();

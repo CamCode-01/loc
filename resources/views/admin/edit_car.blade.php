@@ -44,8 +44,24 @@
                         {{ Form::select('categorie_car', $categories,$car->categorie_car, ['class'=>'form-control']) }}
                     </div>
                     <div class="form-group">
+                        {{ Form::label('', 'Année de fabrication', ['for' => 'cname']) }}
+                        {{ Form::number('afabrication', '', ['class' => 'form-control', 'id' => 'cname']) }}
+                    </div>
+                    <div class="form-group">
+                        {{ Form::label('', 'Boîte de vitesse', ['for' => 'cname']) }}
+                        {{ Form::text('bvitesse', '', ['class' => 'form-control', 'id' => 'cname']) }}
+                    </div>
+                    <div class="form-group">
+                        {{ Form::label('', 'kilométrage', ['for' => 'cname']) }}
+                        {{ Form::number('kmetrage', '', ['class' => 'form-control', 'id' => 'cname']) }}
+                    </div>
+                    <div class="form-group">
                         {{ Form::label('', 'image', ['for' => 'cname']) }}
                         {{ Form::file('car_image1', ['class' => 'form-control', 'id' => 'cname']) }}
+                    </div>
+                    <div class="form-group">
+                        {{ Form::label('', 'image 2', ['for' => 'cname']) }}
+                        {{ Form::file('car_image2', ['class' => 'form-control', 'id' => 'cname']) }}
                     </div>
                     <div class="form-group">
                         {{ Form::label('', 'Détails de la voiture', ['for' => 'cname']) }}
